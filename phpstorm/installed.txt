@@ -1,0 +1,5 @@
+com.almightyalpaca.intellij.plugins.discord
+com.chrisrm.idea.MaterialThemeUI
+com.mallowigi
+net.vektah.codeglance
+ru.adelf.idea.dotenv

@@ -1,0 +1,12 @@
+<application>
+  <component name="MaterialThemeConfig">
+    <option name="overrideAccentColor" value="false" />
+    <option name="pristineConfig" value="false" />
+    <option name="useMaterialFont2" value="true" />
+    <option name="settingsSelectedTab" value="4" />
+    <option name="accentColor" value="ff9800" />
+    <option name="selectedTheme" value="DARKER" />
+    <option name="userId" value="41c50361:1721453a181:-8000" />
+    <option name="version" value="5.2.0" />
+  </component>
+</application>

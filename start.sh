@@ -17,10 +17,16 @@ copyVsCodeSettings() {
     cp $SETTINGSJSON $VSCONFDIR
 }
 
-echo "Running copyBashRc"
-copyBashRc
-echo "end"
+copyPhpStormSettings() {
+    SETTINGSDIR="phpstorm"
 
-echo "Running copyBashRc"
+    echo "Zipping phpstorm into ~/.Desktop/settings.zip"
+    cd $SETTINGSDIR
+    zip -r ~/settings.zip ./*
+}
+
+copyBashRc
+
 copyVsCodeSettings
-echo "end"
+
+copyPhpStormSettings
