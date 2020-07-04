@@ -1,5 +1,7 @@
 #!/bin/bash
 
+GITSCRIPT="$PWD/git.sh"
+
 copyBashRc() {
     BASHRC="$PWD/.bashrc"
     
@@ -30,3 +32,5 @@ copyBashRc
 copyVsCodeSettings
 
 copyPhpStormSettings
+
+$GITSCRIPT
