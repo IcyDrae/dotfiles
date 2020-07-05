@@ -3,24 +3,24 @@
 GITSCRIPT="$PWD/git.sh"
 CRONSCRIPT="$PWD/cron.sh"
 
-function copyBashRc() {
+function linkBashRc() {
     BASHRC="$PWD/.bashrc"
-    
-    echo "Copying .bashrc into user directory..."
-    cp $BASHRC ~/
+
+    echo "Symlinking .bashrc into user directory..."
+    ln -sfv $BASHRC ~/
     echo "Sourcing new .bashrc"
     source ~/.bashrc
 }
 
-function copyVsCodeSettings() {
+function linkVsCodeSettings() {
     SETTINGSJSON="$PWD/vscode/settings.json"
     VSCONFDIR=~/.config/Code/User/
-    
-    echo "Copying settings.json into $VSCONFDIR..."
-    cp $SETTINGSJSON $VSCONFDIR
+
+    echo "Smylinking settings.json into $VSCONFDIR..."
+    ln -sfv $SETTINGSJSON $VSCONFDIR
 }
 
-function copyPhpStormSettings() {
+function zipPhpStormSettings() {
     SETTINGSDIR="phpstorm"
 
     echo "Zipping phpstorm into ~/.Desktop/settings.zip"
@@ -28,11 +28,11 @@ function copyPhpStormSettings() {
     zip -r ~/settings.zip ./*
 }
 
-copyBashRc
+linkBashRc
 
-copyVsCodeSettings
+linkVsCodeSettings
 
-copyPhpStormSettings
+zipPhpStormSettings
 
 $GITSCRIPT
 sudo $CRONSCRIPT

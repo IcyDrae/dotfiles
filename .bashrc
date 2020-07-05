@@ -91,7 +91,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias pyedu='/usr/share/pycharm-edu-2020.1/bin/pycharm.sh'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -124,6 +123,7 @@ mcd() {
 }
 
 # Custom aliases
+alias pyedu='/usr/share/pycharm-edu-2020.1/bin/pycharm.sh'
 alias adb=/home/user/platform-tools/adb
 alias status="git status"
 alias fhere="find . -name "
