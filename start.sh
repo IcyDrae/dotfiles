@@ -2,6 +2,7 @@
 
 GITSCRIPT="$PWD/git.sh"
 CRONSCRIPT="$PWD/cron.sh"
+DOCUMENTS=~/Documents/
 
 function linkBashRc() {
     BASHRC="$PWD/.bashrc"
@@ -16,7 +17,7 @@ function linkVsCodeSettings() {
     SETTINGSJSON="$PWD/vscode/settings.json"
     VSCONFDIR=~/.config/Code/User/
 
-    echo "Smylinking settings.json into $VSCONFDIR..."
+    echo "Symlinking settings.json into $VSCONFDIR..."
     ln -sfv $SETTINGSJSON $VSCONFDIR
 }
 
@@ -28,11 +29,20 @@ function zipPhpStormSettings() {
     zip -r ~/settings.zip ./*
 }
 
+function linkCommands() {
+    COMMANDS="$PWD/commands/general"
+
+    echo "Symlinking useful commands into $DOCUMENTS"
+    ln -sfv $COMMANDS $DOCUMENTS
+}
+
 linkBashRc
 
 linkVsCodeSettings
 
 zipPhpStormSettings
+
+linkCommands
 
 $GITSCRIPT
 sudo $CRONSCRIPT
