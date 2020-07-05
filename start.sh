@@ -1,8 +1,9 @@
 #!/bin/bash
 
 GITSCRIPT="$PWD/git.sh"
+CRONSCRIPT="$PWD/cron.sh"
 
-copyBashRc() {
+function copyBashRc() {
     BASHRC="$PWD/.bashrc"
     
     echo "Copying .bashrc into user directory..."
@@ -11,7 +12,7 @@ copyBashRc() {
     source ~/.bashrc
 }
 
-copyVsCodeSettings() {
+function copyVsCodeSettings() {
     SETTINGSJSON="$PWD/vscode/settings.json"
     VSCONFDIR=~/.config/Code/User/
     
@@ -19,7 +20,7 @@ copyVsCodeSettings() {
     cp $SETTINGSJSON $VSCONFDIR
 }
 
-copyPhpStormSettings() {
+function copyPhpStormSettings() {
     SETTINGSDIR="phpstorm"
 
     echo "Zipping phpstorm into ~/.Desktop/settings.zip"
@@ -34,3 +35,4 @@ copyVsCodeSettings
 copyPhpStormSettings
 
 $GITSCRIPT
+sudo $CRONSCRIPT

@@ -1,0 +1,3 @@
+# For laptops only: Every 2 minutes - checks if battery level is lower than 10% AND not charging, and in that case it suspends
+# ../BAT1/ may vary 
+*/2 * * * * root [ "$(cat /sys/class/power_supply/BAT1/status)" = Charging -o "$(cat /sys/class/power_supply/BAT1/capacity)" -gt 10 ] || systemctl suspend
