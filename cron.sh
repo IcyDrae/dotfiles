@@ -6,7 +6,7 @@ function addCron()
     USER=$(logname)
 
     CRONJOB="$PWD/cronjobs/check-battery"
-    
+
     echo "adding cron job"
     cp $CRONJOB /etc/cron.d/
     sudo crontab -u $USER /etc/cron.d/check-battery

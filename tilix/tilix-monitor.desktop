@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=tilix --session ~/monitor.json
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_GB]=Tilix Monitor
+Name=Tilix Monitor
+Comment[en_GB]=Basic monitoring commands in Tilix using glances and gpustat
+Comment=Basic monitoring commands in Tilix using glances and gpustat

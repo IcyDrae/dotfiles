@@ -2,6 +2,7 @@
 
 GITSCRIPT="$PWD/git.sh"
 CRONSCRIPT="$PWD/cron.sh"
+TILIX="$PWD/tilix/tilix-defaults.sh"
 DOCUMENTS=~/Documents/
 
 function linkBashRc() {
@@ -27,6 +28,9 @@ function zipPhpStormSettings() {
     echo "Zipping phpstorm into ~/.Desktop/settings.zip"
     cd $SETTINGSDIR
     zip -r ~/settings.zip ./*
+
+    # Go back to root
+    cd ../
 }
 
 function linkCommands() {
@@ -45,4 +49,5 @@ zipPhpStormSettings
 linkCommands
 
 $GITSCRIPT
-sudo $CRONSCRIPT
+$CRONSCRIPT
+$TILIX

@@ -1,0 +1,39 @@
+{
+    "child": {
+        "child1": {
+            "directory": "",
+            "height": 193,
+            "overrideCommand": "gpustat -cup -i5",
+            "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+            "readOnly": false,
+            "synchronizedInput": true,
+            "title": "Monitor GPU",
+            "type": "Terminal",
+            "uuid": "533bc16a-0de9-45e2-b5e6-0eeafbec3927",
+            "width": 1920
+        },
+        "child2": {
+            "directory": "",
+            "height": 815,
+            "overrideCommand": "glances -0",
+            "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+            "readOnly": false,
+            "synchronizedInput": true,
+            "title": "Monitor full",
+            "type": "Terminal",
+            "uuid": "879e95ac-9284-43d5-9547-7b91de032633",
+            "width": 1920
+        },
+        "orientation": 1,
+        "position": 19,
+        "ratio": 0.191278493557978185,
+        "type": "Paned"
+    },
+    "height": 1009,
+    "name": "${title}",
+    "synchronizedInput": false,
+    "type": "Session",
+    "uuid": "8ed62994-ae22-4f15-80ad-c7335084aff0",
+    "version": "1.0",
+    "width": 1920
+}
