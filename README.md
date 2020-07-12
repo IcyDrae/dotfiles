@@ -7,4 +7,4 @@ Yes, but this is mine, tailored to my needs and it's also a fun little experimen
 
 ---
 
-- Run the start script to get started
+- Run the start script(as root) to get started
