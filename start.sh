@@ -1,9 +1,11 @@
 #!/bin/bash
 
+USER=$(logname)
 GITSCRIPT="$PWD/git.sh"
 CRONSCRIPT="$PWD/cron.sh"
 TILIX="$PWD/tilix/tilix-defaults.sh"
 DOCUMENTS=~/Documents/
+SYSTEMD=/etc/systemd/system/
 
 function linkBashRc() {
     BASHRC="$PWD/.bashrc"
@@ -29,11 +31,25 @@ function linkCommands() {
     ln -sfv $COMMANDS $DOCUMENTS
 }
 
+function linkSyncthingService() {
+    SYNCTHING="$PWD/syncthing/syncthing@.service"
+
+    echo "Symlinking syncthing service configuration into $SYSTEMD"
+    ln -sfv $SYNCTHING $SYSTEMD
+
+    systemctl daemon-reload
+
+    # Will start as the logged in user and the GUI will be reachable @127.0.0.1:8384(default)
+    systemctl restart syncthing@$USER
+}
+
 linkBashRc
 
 linkVsCodeSettings
 
 linkCommands
+
+linkSyncthingService
 
 $GITSCRIPT
 $CRONSCRIPT
