@@ -22,17 +22,6 @@ function linkVsCodeSettings() {
     ln -sfv $SETTINGSJSON $VSCONFDIR
 }
 
-function zipPhpStormSettings() {
-    SETTINGSDIR="phpstorm"
-
-    echo "Zipping phpstorm into ~/.Desktop/settings.zip"
-    cd $SETTINGSDIR
-    zip -r ~/settings.zip ./*
-
-    # Go back to root
-    cd ../
-}
-
 function linkCommands() {
     COMMANDS="$PWD/commands/general"
 
@@ -43,8 +32,6 @@ function linkCommands() {
 linkBashRc
 
 linkVsCodeSettings
-
-zipPhpStormSettings
 
 linkCommands
 
