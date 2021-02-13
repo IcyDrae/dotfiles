@@ -122,11 +122,24 @@ mcd() {
 	cd $1
 }
 
+nginx-restart() {
+	sudo nginx -t &&
+	sudo service nginx reload &&
+	sudo service nginx restart;
+
+	echo "Nginx configs reloaded and service restarted.";
+}
+
 # Custom aliases
 alias pyedu='/usr/share/pycharm-edu-2020.1/bin/pycharm.sh'
 alias adb=/home/user/platform-tools/adb
-alias status="git status"
 alias fhere="find . -name "
 
 export SPICETIFY_INSTALL="/home/user/spicetify-cli"
-export PATH="$SPICETIFY_INSTALL:$PATH"
+export PATH="$SPICETIFY_INSTALL:/home/user/.local/bin:$PATH"
+export TERM="xterm-256color"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

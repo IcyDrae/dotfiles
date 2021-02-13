@@ -35,7 +35,8 @@ function linkSyncthingService() {
     SYNCTHING="$PWD/syncthing/syncthing@.service"
 
     echo "Symlinking syncthing service configuration into $SYSTEMD"
-    ln -sfv $SYNCTHING $SYSTEMD
+    ln -sfv $SYNCTHING $SYSTEMD # TODO change to copy instead of symlinking
+    # in order for autostarting to work
 
     systemctl daemon-reload
 
