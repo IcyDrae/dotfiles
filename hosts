@@ -1,0 +1,20 @@
+127.0.0.1	dev.local
+127.0.0.1	api.vaults.dev.local www.api.vaults.dev.local
+127.0.0.1	vaults.dev.local www.vaults.dev.local
+127.0.0.1	noteshare.dev.local www.noteshare.dev.local
+
+127.0.0.1	api.dev.local www.api.dev.local
+127.0.0.1	api.noteshare.dev.local	www.noteshare.api.dev.local
+
+127.0.0.1	learning.dev.local www.learning.dev.local
+127.0.0.1	practical-php.learning.dev.local www.practical-php.learning.dev.local
+127.0.0.1	sfcourse.learning.dev.local www.sfcourse.learning.dev.local
+
+127.0.0.1	backend.spotify-auth.com www.backend.spotify-auth.com
+127.0.0.1	spotify-auth.com www.spotify-auth.com
+127.0.0.1	password-manager.front
+127.0.0.1	pmn.image www.pmn.image
+
+192.168.178.22	host.docker.internal
+192.168.178.22	gateway.docker.internal
+127.0.0.1	kubernetes.docker.internal

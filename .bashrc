@@ -132,11 +132,11 @@ nginx-restart() {
 
 # Custom aliases
 alias pyedu='/usr/share/pycharm-edu-2020.1/bin/pycharm.sh'
-alias adb=/home/user/platform-tools/adb
+alias adb=/home/rgjoni/platform-tools/adb
 alias fhere="find . -name "
 
-export SPICETIFY_INSTALL="/home/user/spicetify-cli"
-export PATH="$SPICETIFY_INSTALL:/home/user/.local/bin:$PATH"
+export SPICETIFY_INSTALL="/home/rgjoni/spicetify-cli"
+export PATH="$SPICETIFY_INSTALL:/home/rgjoni/.local/bin:$PATH"
 export TERM="xterm-256color"
 
 

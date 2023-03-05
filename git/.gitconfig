@@ -1,0 +1,13 @@
+[user]
+	name = IcyDrae
+	email = 35934418+IcyDrae@users.noreply.github.com
+[core]
+	autocrlf = input
+	editor = vim
+[auto]
+	crlf = false
+[alias]
+	co = checkout
+	br = branch
+	cm = commit
+	st = status

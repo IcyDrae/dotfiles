@@ -1,16 +1,32 @@
 {
-    "editor.fontLigatures": null,
-    "editor.fontSize": 14,
-    "workbench.colorTheme": "One Dark Pro",
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "files.eol": "\n",
-    "workbench.panel.defaultLocation": "right",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
+    "workbench.colorTheme": "Eva Dark",
+    "markdown.preview.fontSize": 15,
+    "vscord.app.name": "Visual Studio Code",
+    "vscord.ignore.workspaces": [
+        "notes"
     ],
-    "window.zoomLevel": 2
+    "vscord.ignore.workspacesText": "Ignored workspace",
+    "vscord.status.state.text.debugging": "Debugging: {full_dir_name}/{file_name}",
+    "vscord.status.state.text.editing": "Working on {full_dir_name}/{file_name}:{current_line}",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.hovers.enabled": false,
+    "vscord.status.button.enabled": true,
+    "vscord.status.idle.timeout": 900,
+    "explorer.autoReveal": false,
+    "vscord.status.state.text.viewing": "Viewing {full_dir_name}/{file_name}",
+    "search.searchEditor.reusePriorSearchConfiguration": true,
+    "editor.fontFamily": "Fira Mono",
+    "editor.fontSize": 13,
+    "editor.minimap.maxColumn": 250,
+    "editor.minimap.scale": 2,
+    "editor.fontWeight": "normal",
+    "files.autoSave": "afterDelay",
+    "gitlens.blame.format": "${message|10?} ${agoOrDate|14-}",
+    "npm-intellisense.scanDevDependencies": true,
+    "window.zoomLevel": 1,
+    "editor.linkedEditing": true,
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.fontFamily": "monospace",
 }

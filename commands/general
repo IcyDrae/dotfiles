@@ -30,7 +30,7 @@ Reshow desktop icons after (some) big updates in some Gnome based OS' like Ubunt
 ---------------------------------------------------------------------
 Mount a remote folder through ssh with the option to auto-reconnect
 
-sshfs personal-vps-1:/var/www/transfer/ /home/user/transfer/ -o reconnect
+sshfs personal-vps-1:/var/www/transfer/ /home/rgjoni/transfer/ -o reconnect
 (for persistence, add to fstab too)
 ---------------------------------------------------------------------
 Generate selfsigned OpenSSL certificate
