@@ -7,4 +7,6 @@ Yes, but this is mine, tailored to my needs and it's also a fun little experimen
 
 ---
 
-- ``` cp alacritty.toml into .config/alacritty/alacritty.toml ```
+- ``` cp alacritty/alacritty.toml .config/alacritty/alacritty.toml ```
+- ``` cp ./git/.gitconfig ~/.gitconfig ```
+- ``` cp ./tmux/.tmux.conf .config/tmux/.tmux.conf ```
