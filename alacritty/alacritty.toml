@@ -7,8 +7,8 @@
 #"~/.config/alacritty/keybindings.toml",
 #]
 
-[terminal.shell]
-program               = "/bin/zsh"
+[shell]
+program               = "/bin/bash"
 args                  = [ "--login", ]
 
 #working_directory     = "None"
