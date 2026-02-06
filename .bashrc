@@ -26,12 +26,14 @@ unset rc
 
 # Custom
 # ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias lt='ls -lhtr'      # list by date, human-readable
-alias lx='ls -lXB'       # sort by extension
-alias lS='ls -lS'        # sort by size
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36:cd=36'
+alias ll='ls -alF --color=auto'
+alias la='ls -A --color=auto'
+alias l='ls -CF --color=auto'
+alias lt='ls -lhtr --color=auto'
+alias lx='ls -lXB --color=auto'
+alias lS='ls -lS --color=auto'
+alias tree='tree -C'  # colorize tree
 
 # Navigation and dirs
 mcd() {
@@ -48,6 +50,7 @@ alias update='sudo dnf update -y'
 alias rebootnow='sudo systemctl reboot'
 alias shutdownnow='sudo systemctl poweroff'
 alias ports='sudo ss -tulnp'
+alias myip="curl ifconfig.me"
 
 # Quick extraction
 extract() {
@@ -70,4 +73,6 @@ extract() {
         echo "'$1' is not a valid file"
     fi
 }
+
+
 
