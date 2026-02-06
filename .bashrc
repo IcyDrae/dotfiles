@@ -74,5 +74,21 @@ extract() {
     fi
 }
 
+# Smart sudo: rerun last command with sudo if it failed
+smart_sudo() {
+    # Save last command
+    last_cmd=$(history | tail -n2 | head -n1 | sed 's/^[ ]*[0-9]*[ ]*//')
+    
+    # Try running it
+    eval "$last_cmd"
+    
+    # If it fails with permission denied, retry with sudo
+    if [ $? -ne 0 ]; then
+        echo "Retrying with sudo..."
+        sudo $last_cmd
+    fi
+}
 
+# Shortcut: !! → smart sudo
+alias please='smart_sudo'
 
