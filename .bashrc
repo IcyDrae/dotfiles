@@ -92,3 +92,6 @@ smart_sudo() {
 # Shortcut: !! → smart sudo
 alias please='smart_sudo'
 
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+
