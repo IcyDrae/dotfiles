@@ -1,12 +1,12 @@
 /* Gruvbox Blurry Theme for Wofi (Wayland) */
 window {
-    background-color: rgba(40, 40, 40, 0.8) !important; /* semi-transparent, triggers KWin blur */
+    background-color: rgba(40, 40, 40, 0.8); /* semi-transparent, triggers KWin blur */
     border: 0px;
     backdrop-filter: blur(12px); /* optional, may not work on GTK fully */
 }
 
 listview {
-    background-color: rgba(40, 40, 40, 0.8) !important;
+    background-color: rgba(40, 40, 40, 0.8);
     color: #ebdbb2; /* Gruvbox light text */
     border-radius: 12px;
     padding: 6px;
@@ -14,23 +14,23 @@ listview {
 }
 
 listview row:selected {
-    background-color: rgba(131, 148, 150, 0.8) !important; /* Gruvbox grey highlight with transparency */
+    background-color: rgba(131, 148, 150, 0.8); /* Gruvbox grey highlight with transparency */
     color: #fb4934 !important; /* Gruvbox red for selected text */
 }
 
 textbox {
-    background-color: rgba(40, 40, 40, 0.8) !important;
+    background-color: rgba(40, 40, 40, 0.8);
     color: #ebdbb2 !important;
     border-radius: 8px;
     padding: 5px;
 }
 
 scrollbar {
-    background-color: rgba(60, 60, 60, 0.8) !important;
+    background-color: rgba(60, 60, 60, 0.8);
     border-radius: 5px;
 }
 
 scrollbar slider {
-    background-color: rgba(215, 153, 33, 0.8) !important; /* Gruvbox orange */
+    background-color: rgba(215, 153, 33, 0.8); /* Gruvbox orange */
     border-radius: 5px;
 }
