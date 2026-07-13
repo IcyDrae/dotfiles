@@ -5,3 +5,5 @@ My collection of dotfiles to get up and running quick in a new environment
 
 Yes, but this is mine, tailored to my needs and it's also a fun little experiment to learn some shell scripting and Linux.
 
+
+
