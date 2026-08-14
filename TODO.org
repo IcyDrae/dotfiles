@@ -1,0 +1,11 @@
+#+title: Todo
+
+* To do's when installing a new system
+
+- Log in to Firefox
+- Log in to password manager
+- Install kitty
+- Install Doom Emacs
+- Install fonts
+- Set up SSH access to GitHub
+
