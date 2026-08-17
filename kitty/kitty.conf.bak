@@ -3008,6 +3008,6 @@ enable_audio_bell yes
 
 
 # BEGIN_KITTY_THEME
-# Gnome-ish gray-on-black
+# Tokyo Night
 include current-theme.conf
 # END_KITTY_THEME
