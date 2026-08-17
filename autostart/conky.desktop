@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Conky
+Exec=conky -c /home/reard/.config/conky/conky.conf
+Terminal=false
+X-GNOME-Autostart-enabled=true
+

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Spotify Conky
+Exec=sh -c 'sleep 5; conky -c /home/reard/.config/conky/spotify.conf'
+Terminal=false
+X-GNOME-Autostart-enabled=true
+
