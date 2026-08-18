@@ -1,0 +1,10 @@
+* dotfiles
+My collection of dotfiles to get up and running quick in a new system.
+
+* Structure
+- home
+    - for stuff that goes directly into $HOME
+- .config
+    - for stuff that goes into $HOME/.config
+- etc
+    - for system configuration stuff 
