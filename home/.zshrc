@@ -105,3 +105,6 @@ source $ZSH/oh-my-zsh.sh
 
 export DOOMDIR="$HOME/.config/.doom.d"
 
+# Personal scripts
+export PATH="$HOME/scripts:$PATH"
+
