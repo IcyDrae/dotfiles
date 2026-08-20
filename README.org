@@ -8,3 +8,4 @@ My collection of dotfiles to get up and running quick in a new system.
     - for stuff that goes into $HOME/.config
 - etc
     - for system configuration stuff 
+ 
