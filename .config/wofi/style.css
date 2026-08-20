@@ -1,0 +1,104 @@
+/* ─────────────────────────────────────────────
+   Lush Forest — Wofi
+   ───────────────────────────────────────────── */
+
+* {
+    font-family: "Iosevka Nerd Font";
+    font-size: 15px;
+}
+
+/* Main window */
+#window {
+    background-color: rgba(15, 27, 21, 0.96);
+    border: 2px solid #3f7d58;
+    border-radius: 18px;
+}
+
+/* Main container */
+#outer-box {
+    padding: 18px;
+}
+
+/* Search box */
+#input {
+    margin: 0 0 14px 0;
+    padding: 11px 15px;
+
+    color: #dcefe2;
+    background-color: #1a3024;
+
+    border: 1px solid #315f43;
+    border-radius: 12px;
+
+    outline: none;
+}
+
+/* Search text */
+#input image {
+    color: #7fbc91;
+}
+
+/* Scroll area */
+#scroll {
+    margin: 0;
+}
+
+/* Entries container */
+#inner-box {
+    margin: 0;
+}
+
+/* Individual entry */
+#entry {
+    padding: 9px 12px;
+    margin: 3px 0;
+
+    color: #c9dfcf;
+
+    border-radius: 10px;
+}
+
+/* Entry icon */
+#entry image {
+    margin-right: 10px;
+}
+
+/* Selected entry */
+#entry:selected {
+    color: #f0fff4;
+    background-color: #285c3b;
+
+    border: 1px solid #4f9968;
+}
+
+/* Selected entry text */
+#entry:selected #text {
+    color: #f0fff4;
+}
+
+/* Unselected text */
+#text {
+    color: #c9dfcf;
+}
+
+/* Scrollbar */
+scrollbar {
+    background-color: transparent;
+}
+
+scrollbar slider {
+    background-color: #315f43;
+    border-radius: 10px;
+    min-width: 5px;
+}
+
+/* Remove ugly scrollbar buttons */
+scrollbar button {
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+

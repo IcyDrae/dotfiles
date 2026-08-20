@@ -16,13 +16,14 @@ choice=$(
         | wofi --dmenu \
             --insensitive \
             --matching fuzzy \
+	    --style ~/.config/wofi/style.css \
             --prompt "Exec"
 )
 
 case "$choice" in
 
     "Applications")
-        wofi --show drun
+        wofi --show drun --style ~/.config/wofi/style.css
         ;;
 
     "Calculator")
@@ -32,53 +33,53 @@ case "$choice" in
         result=$(calc.sh "$query")
 
         printf '%s\n' "$result" \
-            | wofi --dmenu --prompt "Result"
+            | wofi --dmenu --prompt "Result" --style ~/.config/wofi/style.css
         ;;
 
     "Google Search")
-        query=$(printf '' | wofi --dmenu --prompt "Google")
+        query=$(printf '' | wofi --dmenu --prompt "Google" --style ~/.config/wofi/style.css)
         [[ -z "$query" ]] && exit 0
 
         g.sh "$query"
         ;;
 
     "YouTube Search")
-        query=$(printf '' | wofi --dmenu --prompt "YouTube")
+        query=$(printf '' | wofi --dmenu --prompt "YouTube" --style ~/.config/wofi/style.css)
         [[ -z "$query" ]] && exit 0
 
         yt.sh "$query"
         ;;
 
     "GitHub Search")
-        query=$(printf '' | wofi --dmenu --prompt "GitHub")
+        query=$(printf '' | wofi --dmenu --prompt "GitHub" --style ~/.config/wofi/style.css)
         [[ -z "$query" ]] && exit 0
 
         gh.sh "$query"
         ;;
 
     "Wikipedia Search")
-        query=$(printf '' | wofi --dmenu --prompt "Wikipedia")
+        query=$(printf '' | wofi --dmenu --prompt "Wikipedia" --style ~/.config/wofi/style.css)
         [[ -z "$query" ]] && exit 0
 
         wikipedia.sh "$query"
         ;;
 
     "Translate")
-        query=$(printf '' | wofi --dmenu --prompt "Translate")
+        query=$(printf '' | wofi --dmenu --prompt "Translate" --style ~/.config/wofi/style.css)
         [[ -z "$query" ]] && exit 0
 
         translate.sh "$query"
         ;;
 
     "Open URL")
-        url=$(printf '' | wofi --dmenu --prompt "URL")
+        url=$(printf '' | wofi --dmenu --prompt "URL" --style ~/.config/wofi/style.css)
         [[ -z "$url" ]] && exit 0
 
         xdg-open "$url"
         ;;
 
     "Run Command")
-        command=$(printf '' | wofi --dmenu --prompt "Run")
+        command=$(printf '' | wofi --dmenu --prompt "Run" --style ~/.config/wofi/style.css)
         [[ -z "$command" ]] && exit 0
 
         bash -lc "$command"
