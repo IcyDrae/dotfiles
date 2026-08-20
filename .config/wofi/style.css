@@ -3,7 +3,7 @@
    ───────────────────────────────────────────── */
 
 * {
-    font-family: "Iosevka Nerd Font";
+    font-family: "IoskeleyMono Nerd Font Medium";
     font-size: 15px;
 }
 
@@ -11,7 +11,7 @@
 #window {
     background-color: rgba(15, 27, 21, 0.96);
     border: 2px solid #3f7d58;
-    border-radius: 18px;
+    border-radius: 10px;
 }
 
 /* Main container */
@@ -28,7 +28,7 @@
     background-color: #1a3024;
 
     border: 1px solid #315f43;
-    border-radius: 12px;
+    border-radius: 8px;
 
     outline: none;
 }
@@ -55,7 +55,7 @@
 
     color: #c9dfcf;
 
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 /* Entry icon */
