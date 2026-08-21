@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Quickshell System Monitor
+Comment=Quickshell system monitor
+Exec=quickshell -p /home/reard/.config/quickshell/shell.qml
+Terminal=false
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
+
