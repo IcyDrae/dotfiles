@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Quickshell Top Panel
+Comment=Quickshell desktop top panel
+Exec=/usr/bin/quickshell -p /home/reard/.config/quickshell/top-panel.qml
+Terminal=false
+StartupNotify=false
+X-KDE-autostart-after=panel
