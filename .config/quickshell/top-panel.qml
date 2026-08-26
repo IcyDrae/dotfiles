@@ -23,7 +23,6 @@ PanelWindow {
 
     implicitHeight: 44
 
-    // The PanelWindow itself must be transparent
     color: "transparent"
 
     // ─────────────────────────────────────────
@@ -40,6 +39,10 @@ PanelWindow {
     // ─────────────────────────────────────────
 
     property string mediaText: "♫  Nothing playing"
+
+    property var activePlayer: null
+
+    property bool mediaPopupVisible: false
 
     // ─────────────────────────────────────────
     // CLOCK DATA
@@ -189,7 +192,7 @@ PanelWindow {
     }
 
     // ─────────────────────────────────────────
-    // MPRIS
+    // FIND PLAYING MPRIS PLAYER
     // ─────────────────────────────────────────
 
     function updateMedia() {
@@ -206,10 +209,19 @@ PanelWindow {
             }
         }
 
+        // If nothing is currently playing, keep the
+        // player object if possible so paused music
+        // can still be controlled.
+        if (!playingPlayer && root.activePlayer) {
+            playingPlayer = root.activePlayer
+        }
+
         if (!playingPlayer) {
             root.mediaText = "♫  Nothing playing"
             return
         }
+
+        root.activePlayer = playingPlayer
 
         var artist = playingPlayer.trackArtist
         var title = playingPlayer.trackTitle
@@ -227,6 +239,10 @@ PanelWindow {
             title
     }
 
+    // ─────────────────────────────────────────
+    // MPRIS PLAYER CHANGES
+    // ─────────────────────────────────────────
+
     Connections {
         target: Mpris.players
 
@@ -239,6 +255,10 @@ PanelWindow {
         }
     }
 
+    // ─────────────────────────────────────────
+    // MEDIA UPDATE TIMER
+    // ─────────────────────────────────────────
+
     Timer {
         interval: 1000
         running: true
@@ -247,11 +267,6 @@ PanelWindow {
         onTriggered: {
             root.updateMedia()
         }
-    }
-
-    Component.onCompleted: {
-        root.updateMedia()
-        root.updateDateTime()
     }
 
     // ─────────────────────────────────────────
@@ -276,6 +291,11 @@ PanelWindow {
         onTriggered: {
             root.updateDateTime()
         }
+    }
+
+    Component.onCompleted: {
+        root.updateMedia()
+        root.updateDateTime()
     }
 
     // ─────────────────────────────────────────
@@ -405,6 +425,19 @@ PanelWindow {
             elide: Text.ElideRight
 
             text: root.mediaText
+
+            MouseArea {
+                anchors.fill: parent
+
+                cursorShape: Qt.PointingHandCursor
+
+                onClicked: {
+                    if (root.activePlayer) {
+                        root.mediaPopupVisible =
+                            !root.mediaPopupVisible
+                    }
+                }
+            }
         }
 
         // ─────────────────────────────────────
@@ -428,5 +461,211 @@ PanelWindow {
             text: root.dateTimeText
         }
     }
-}
 
+    // ═══════════════════════════════════════════
+    // MUSIC POPUP
+    // ═══════════════════════════════════════════
+    //
+    // IMPORTANT:
+    // This is a PopupWindow, NOT another PanelWindow.
+    //
+    // Therefore it floats independently and does
+    // NOT change the height/position of the top bar.
+    //
+    // ═══════════════════════════════════════════
+
+    PopupWindow {
+        id: musicPopup
+
+        anchor.window: root
+
+        anchor.rect.x:
+            (root.width / 2) - (width / 2)
+
+        anchor.rect.y:
+            root.height + 4
+
+        width: 420
+        height: 140
+
+        visible:
+            root.mediaPopupVisible &&
+            root.activePlayer !== null
+
+        color: "transparent"
+
+        Rectangle {
+            anchors.fill: parent
+
+            radius: 10
+
+            color: "#0d1711"
+
+            border.width: 1
+            border.color: "#315b3d"
+
+            Column {
+                anchors {
+                    fill: parent
+                    margins: 20
+                }
+
+                spacing: 8
+
+                // ─────────────────────────────
+                // ARTIST
+                // ─────────────────────────────
+
+                Text {
+                    width: parent.width
+
+                    horizontalAlignment:
+                        Text.AlignHCenter
+
+                    text:
+                        root.activePlayer
+                        ? (
+                            root.activePlayer.trackArtist ||
+                            "Unknown Artist"
+                        )
+                        : "Unknown Artist"
+
+                    color: "#71977b"
+
+                    font.family:
+                        "IoskeleyMono Nerd Font"
+
+                    font.pixelSize: 14
+
+                    elide: Text.ElideRight
+                }
+
+                // ─────────────────────────────
+                // TITLE
+                // ─────────────────────────────
+
+                Text {
+                    width: parent.width
+
+                    horizontalAlignment:
+                        Text.AlignHCenter
+
+                    text:
+                        root.activePlayer
+                        ? (
+                            root.activePlayer.trackTitle ||
+                            "Unknown Title"
+                        )
+                        : "Unknown Title"
+
+                    color: "#a5ffbd"
+
+                    font.family:
+                        "IoskeleyMono Nerd Font"
+
+                    font.pixelSize: 18
+
+                    font.bold: true
+
+                    elide: Text.ElideRight
+                }
+
+                // ─────────────────────────────
+                // CONTROLS
+                // ─────────────────────────────
+
+                Row {
+                    anchors.horizontalCenter:
+                        parent.horizontalCenter
+
+                    spacing: 18
+
+                    Text {
+                        text: "󰒮"
+
+                        color: "#a5ffbd"
+
+                        font.family:
+                            "IoskeleyMono Nerd Font"
+
+                        font.pixelSize: 24
+
+                        MouseArea {
+                            anchors.fill: parent
+
+                            cursorShape:
+                                Qt.PointingHandCursor
+
+                            onClicked: {
+                                if (
+                                    root.activePlayer &&
+                                    root.activePlayer.canGoPrevious
+                                ) {
+                                    root.activePlayer.previous()
+                                }
+                            }
+                        }
+                    }
+
+                    Text {
+                        text:
+                            root.activePlayer &&
+                            root.activePlayer.isPlaying
+                            ? "󰏤"
+                            : "󰐊"
+
+                        color: "#a5ffbd"
+
+                        font.family:
+                            "IoskeleyMono Nerd Font"
+
+                        font.pixelSize: 24
+
+                        MouseArea {
+                            anchors.fill: parent
+
+                            cursorShape:
+                                Qt.PointingHandCursor
+
+                            onClicked: {
+                                if (
+                                    root.activePlayer &&
+                                    root.activePlayer.canTogglePlaying
+                                ) {
+                                    root.activePlayer.togglePlaying()
+                                }
+                            }
+                        }
+                    }
+
+                    Text {
+                        text: "󰒭"
+
+                        color: "#a5ffbd"
+
+                        font.family:
+                            "IoskeleyMono Nerd Font"
+
+                        font.pixelSize: 24
+
+                        MouseArea {
+                            anchors.fill: parent
+
+                            cursorShape:
+                                Qt.PointingHandCursor
+
+                            onClicked: {
+                                if (
+                                    root.activePlayer &&
+                                    root.activePlayer.canGoNext
+                                ) {
+                                    root.activePlayer.next()
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
