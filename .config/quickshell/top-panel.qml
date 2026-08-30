@@ -235,7 +235,7 @@ PanelWindow {
         root.mediaText =
             "♫  " +
             artist +
-            " — " +
+            " - " +
             title
     }
 
@@ -413,7 +413,7 @@ PanelWindow {
                 verticalCenter: parent.verticalCenter
             }
 
-            width: parent.width - 500
+            width: Math.min(parent.width - 500, 400)
 
             horizontalAlignment: Text.AlignHCenter
 
