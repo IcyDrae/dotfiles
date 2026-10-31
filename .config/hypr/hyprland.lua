@@ -259,7 +259,7 @@ hl.device({
 ---- KEYBINDINGS ----
 ---------------------
 
-local mainMod = "CTRL" -- Sets "Windows" key as main modifier
+local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 hl.bind("PRINT", hl.dsp.exec_cmd("grim ~/Pictures/screenshot.png"))
 hl.bind("SHIFT" .. " + PRINT", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/screenshot.png'))
