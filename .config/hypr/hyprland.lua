@@ -259,8 +259,10 @@ hl.device({
 ---- KEYBINDINGS ----
 ---------------------
 
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+local mainMod = "CTRL" -- Sets "Windows" key as main modifier
 
+hl.bind("PRINT", hl.dsp.exec_cmd("grim ~/Pictures/screenshot.png"))
+hl.bind("SHIFT" .. " + PRINT", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/screenshot.png'))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + B ", hl.dsp.exec_cmd(browser))
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
